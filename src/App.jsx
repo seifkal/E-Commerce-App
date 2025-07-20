@@ -10,13 +10,15 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState([]);
 
+  const initialQuantity = 0;
+
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
         setLoading(false);
-        setSelectedProduct(Array(data.length + 1).fill(0)); // +1 to match product.id indexing
+        setSelectedProduct(Array(data.length + 1).fill(initialQuantity)); 
       })
       .catch(err => {
         console.error('Error fetching products:', err);
@@ -32,14 +34,12 @@ function App() {
           <Outlet context={{ products, loading, selectedProduct, setSelectedProduct }} />
         </main>
       </div>
-      {/* Overlay for cart */}
       {cartOpen && (
         <div
           className="fixed inset-0 bg-black/20 z-40 transition-opacity duration-300"
           onClick={() => setCartOpen(false)}
         />
       )}
-      {/* Cart drawer (z-50) */}
       <ShoppingCart open={cartOpen} onClose={() => setCartOpen(false)} products={products} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct} />
       <Footer />
     </>
