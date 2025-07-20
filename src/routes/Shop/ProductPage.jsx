@@ -2,6 +2,7 @@ import { useParams, useOutletContext } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { useState } from "react";
 import QuantityInput from "../../components/QuantityInput";
+import Loading from "../../components/Loading";
 
 export default function ProductPage() {
     const { id } = useParams();
@@ -16,7 +17,7 @@ export default function ProductPage() {
         });
     }
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />;
 
     const product = products.find(p => p.id == id);
 
