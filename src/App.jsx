@@ -30,7 +30,7 @@ function App() {
     <>
       <div className='min-h-screen flex flex-col'>
         <Header onCartClick={() => setCartOpen(true)} />
-        <main className='flex-1'>
+        <main className='flex-1 p-0 m-0 min-h-0'>
           <Outlet context={{ products, loading, selectedProduct, setSelectedProduct }} />
         </main>
       </div>
