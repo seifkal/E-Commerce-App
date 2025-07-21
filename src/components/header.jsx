@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom"
+import logo from "../assets/logo.svg"
 
 export default function Header({ onCartClick }) {
     return (
-        <nav className="w-full shadow flex items-center justify-between px-8 py-4">
-            <div>Shopping cart</div>
+        <nav className="w-full shadow flex items-center justify-between px-8 py-4 sticky top-0 z-50 bg-white/80 backdrop-blur">
+            <div>
+                <Link to="/">
+                    <img src={logo} alt="logo" />
+                </Link>
+            </div>
             <div className="flex-1 flex justify-end">
                 <ul className="flex space-x-8 text-lg font-light">
                     <li><Link to="/">Home</Link></li>
