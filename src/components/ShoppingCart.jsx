@@ -2,18 +2,15 @@ import React from "react";
 import QuantityInput from "./QuantityInput";
 
 export default function ShoppingCart({ open, onClose, products, selectedProduct, setSelectedProduct }) {
-  // Filter products with quantity > 0
   const cartItems = products.filter(
     (product) => selectedProduct[product.id] > 0
   );
 
-  // Calculate total sum
   const total = cartItems.reduce(
     (sum, product) => sum + product.price * selectedProduct[product.id],
     0
   );
 
-  // Handle quantity change
   const handleQuantityChange = (id, qty) => {
     setSelectedProduct(prev => {
       const updated = [...prev];
@@ -22,7 +19,6 @@ export default function ShoppingCart({ open, onClose, products, selectedProduct,
     });
   };
 
-  // Handle remove item
   const handleRemove = (id) => {
     setSelectedProduct(prev => {
       const updated = [...prev];
@@ -48,14 +44,13 @@ export default function ShoppingCart({ open, onClose, products, selectedProduct,
           &times;
         </button>
       </div>
-      <div className="flex flex-col h-[calc(100%-112px)]"> {/* 112px = header (64px) + footer (48px) */}
+      <div className="flex flex-col h-[calc(100%-112px)]">  
         <div className="flex-1 overflow-y-auto p-4">
           {cartItems.length === 0 ? (
             <p className="text-gray-500 text-center mt-8">Your cart is empty.</p>
           ) : (
             cartItems.map((product) => (
               <div key={product.id} className="relative flex items-center mb-6 bg-gray-50 rounded-lg p-3 pt-6">
-                {/* Remove button at top right, slightly above the title */}
                 <button
                   onClick={() => handleRemove(product.id)}
                   className="absolute top-0 right-2 text-gray-400 hover:text-red-600 transition-colors p-1"
@@ -82,7 +77,6 @@ export default function ShoppingCart({ open, onClose, products, selectedProduct,
             ))
           )}
         </div>
-        {/* Sticky footer */}
         <div className="border-t p-4 bg-white sticky bottom-0 z-10">
           <div className="flex items-center justify-between mb-3">
             <span className="font-semibold text-lg">Total:</span>

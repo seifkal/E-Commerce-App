@@ -5,7 +5,7 @@ export default function ProductCard({ product }) {
   return (
     <Link
       to={`/product/${product.id}`}
-      className="bg-white rounded-lg shadow-md border p-4 flex flex-col items-center hover:shadow-lg transform transition-transform duration-200 hover:scale-105 min-h-96"
+      className="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center hover:shadow-2xl transform transition-transform duration-200 hover:scale-105 min-h-96 mb-8"
     >
       <img
         src={product.image}

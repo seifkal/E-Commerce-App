@@ -18,7 +18,6 @@ export default function QuantityInput({ value, onChange, min = 1, max = 99 }) {
 
   return (
     <div className="flex items-center bg-white rounded shadow-sm border border-gray-200 overflow-hidden w-32 mb-4">
-      {/* Minus Button */}
       <button
         type="button"
         onClick={handleDecrease}
@@ -30,12 +29,10 @@ export default function QuantityInput({ value, onChange, min = 1, max = 99 }) {
         aria-label="Decrease quantity"
         disabled={value <= min}
       >
-        {/* Custom minus icon */}
         <span className="absolute inset-0 flex items-center justify-center">
           <span className="block w-5 h-0.5 bg-black"></span>
         </span>
       </button>
-      {/* Input */}
       <input
         type="number"
         min={min}
@@ -47,7 +44,6 @@ export default function QuantityInput({ value, onChange, min = 1, max = 99 }) {
           MozAppearance: "textfield",
         }}
       />
-      {/* Plus Button */}
       <button
         type="button"
         onClick={handleIncrease}
@@ -58,8 +54,7 @@ export default function QuantityInput({ value, onChange, min = 1, max = 99 }) {
         }`}
         aria-label="Increase quantity"
         disabled={value >= max}
-      >
-        {/* Custom plus icon */}
+      > 
         <span className="absolute inset-0 flex items-center justify-center">
           <span className="block w-5 h-0.5 bg-black"></span>
           <span className="block h-5 w-0.5 bg-black absolute"></span>
