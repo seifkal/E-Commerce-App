@@ -10,7 +10,7 @@ export default function Shop(){
     return (
         <div className="p-8 bg-gray-100">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {products.slice(0, 20).map((product) => (
+                {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
             </div>
