@@ -6,11 +6,11 @@ export default function Header({ onCartClick }) {
         <nav className="w-full shadow flex items-center justify-between px-8 py-4 sticky top-0 z-50 bg-white/80 backdrop-blur">
             <div>
                 <Link to="/">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" className="w-24 sm:w-auto h-auto"/>
                 </Link>
             </div>
             <div className="flex-1 flex justify-end">
-                <ul className="flex space-x-8 text-lg font-light">
+                <ul className="flex space-x-8 text-lg font-light items-center">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/shop">Shop</Link></li>
                     <li>
