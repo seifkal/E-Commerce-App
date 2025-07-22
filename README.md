@@ -9,5 +9,7 @@ A responsive e-commerce React web app.
 
 # Built with
 - React
-- React routerx
+- React Router
+- Vite 
+- Tailwind
 
